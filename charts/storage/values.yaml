@@ -4,3 +4,6 @@ longhorn:
     jobEnabled: false
   persistence:
     reclaimPolicy: Retain
+  defaultBackupStore:
+    backupTarget: s3://plat-fra-prod-storage-backup@eu-frankfurt-1/
+    backupTargetCredentialSecret: storage-backup

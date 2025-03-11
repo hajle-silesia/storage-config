@@ -1,0 +1,11 @@
+apiVersion: longhorn.io/v1beta1
+kind: RecurringJob
+metadata:
+  name: storage-backup
+spec:
+  cron: "0/5 * * * *"
+  task: "backup"
+  groups:
+    - default
+  retain: 1
+  concurrency: 2

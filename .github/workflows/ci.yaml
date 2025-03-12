@@ -12,7 +12,7 @@ on:
 jobs:
   chart-package:
     name: Chart package
-    uses: hajle-silesia/.github/.github/workflows/shared-chart-package.yaml@v2.5.0
+    uses: hajle-silesia/.github/.github/workflows/shared-chart-package.yaml@v2.6.1
     with:
       docker-hub-username: ${{ vars.DOCKER_HUB_USERNAME }}
       docker-hub-namespace: ${{ vars.DOCKER_HUB_NAMESPACE }}
@@ -24,7 +24,7 @@ jobs:
     needs:
       - chart-package
     name: App update
-    uses: hajle-silesia/.github/.github/workflows/shared-app-update.yaml@v2.5.0
+    uses: hajle-silesia/.github/.github/workflows/shared-app-update.yaml@v2.6.1
     with:
       docker-hub-namespace: ${{ needs.chart-package.outputs.docker-hub-namespace }}
       chart-version: ${{ needs.chart-package.outputs.version }}
